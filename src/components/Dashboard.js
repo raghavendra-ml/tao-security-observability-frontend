@@ -39,7 +39,7 @@ const Dashboard = () => {
 
   // Filter states - updated time range options, added back assignee
   const [filters, setFilters] = useState({
-    timeRange: 'Last 24 Hours',
+    timeRange: 'All',
     severity: 'All',
     assignee: 'All'
   });
