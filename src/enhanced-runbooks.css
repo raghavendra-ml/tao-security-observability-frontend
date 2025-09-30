@@ -1,0 +1,653 @@
+/* Enhanced AI Runbook Suggestions Styles */
+
+/* Clean and simple approach - no complex overrides */
+
+/* SIMPLIFIED LAYOUT - App.css handles main-content, we handle containers */
+
+/* Runbooks containers - normal flex layout */
+.runbooks-page-container,
+.runbook-detail-page-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Content areas */
+.runbooks-main-content,
+.runbook-detail-main {
+  flex: 1;
+  padding: 1rem;
+  margin: 0;
+  overflow-y: auto;
+  box-sizing: border-box;
+  min-width: 0; /* Prevents flex overflow */
+}
+
+/* Page content */
+.runbooks-page {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.runbooks-page-container *,
+.runbook-detail-page-container * {
+  box-sizing: border-box;
+}
+
+/* Clean styling - no complex overrides needed */
+
+.suggested-runbooks-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header h3 {
+  margin: 0;
+  color: #1e293b;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.header-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.runbook-count {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.toggle-btn {
+  background: #3b82f6;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.toggle-btn:hover {
+  background: #2563eb;
+}
+
+.runbooks-enhanced-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.runbook-card-enhanced {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s;
+}
+
+.runbook-card-enhanced:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #3b82f6;
+}
+
+.runbook-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.runbook-title-section h4 {
+  margin: 0 0 0.5rem 0;
+  color: #1e293b;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.runbook-type-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  background: #e0e7ff;
+  color: #3730a3;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.runbook-type-badge.security {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.runbook-type-badge.network {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.runbook-type-badge.data {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.relevance-section {
+  text-align: right;
+}
+
+.relevance-score .percentage {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #059669;
+  display: block;
+}
+
+.confidence-indicator {
+  margin-top: 0.25rem;
+}
+
+.confidence-badge {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.confidence-badge.high {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.confidence-badge.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.confidence-badge.low {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.relevance-bar {
+  width: 100%;
+  height: 6px;
+  background: #e5e7eb;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+.relevance-fill {
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+  border-radius: 3px;
+}
+
+.runbook-description {
+  color: #64748b;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.matching-factors {
+  background: #f1f5f9;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.factors-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.factors-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.factor-item {
+  color: #64748b;
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+  line-height: 1.4;
+}
+
+.runbook-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 0.625rem 1rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex: 1;
+}
+
+.btn-primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: #f1f5f9;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+}
+
+.btn-secondary:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+}
+
+/* Responsive adjustments for runbooks */
+@media (max-width: 768px) {
+  .runbooks-enhanced-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .runbook-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .relevance-section {
+    text-align: left;
+  }
+  
+  .runbook-actions {
+    flex-direction: column;
+  }
+}
+
+/* Runbook Page Layout with Chat */
+.runbooks-page-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.runbooks-main-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.runbooks-chat-container {
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  border-left: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Prevents chat from shrinking */
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Runbook Detail Page Layout */
+.runbook-detail-page-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  overflow: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+.runbook-detail-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  min-width: 0; /* Prevents flex item from overflowing */
+}
+
+.runbook-detail-chat-container {
+  width: 350px;
+  min-width: 350px;
+  max-width: 350px;
+  border-left: 1px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0; /* Prevents chat from shrinking */
+  height: 100%;
+  overflow-y: auto;
+}
+
+/* Runbook Chat Assistant Styles */
+.runbook-chat-assistant {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.runbook-chat-assistant .chat-header {
+  padding: 0.75rem;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f8fafc;
+}
+
+.runbook-chat-assistant .chat-header h3 {
+  margin: 0 0 0.25rem 0;
+  color: #1e293b;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.chat-context-indicator {
+  font-size: 0.7rem;
+  color: #64748b;
+  background: #e2e8f0;
+  padding: 0.2rem 0.4rem;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 500;
+}
+
+.runbook-chat-assistant .chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 0; /* Allows flex item to shrink */
+}
+
+.runbook-chat-assistant .message {
+  max-width: 100%;
+}
+
+.runbook-chat-assistant .message.assistant {
+  align-self: flex-start;
+}
+
+.runbook-chat-assistant .message.user {
+  align-self: flex-end;
+}
+
+.runbook-chat-assistant .message-content {
+  padding: 0.6rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.runbook-chat-assistant .message.assistant .message-content {
+  background: #f1f5f9;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+.runbook-chat-assistant .message.user .message-content {
+  background: #3b82f6;
+  color: white;
+}
+
+.runbook-chat-assistant .message-content p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.message-time {
+  display: block;
+  font-size: 0.75rem;
+  color: #64748b;
+  margin-top: 0.5rem;
+}
+
+/* Chat Suggestions */
+.chat-suggestions {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.suggestions-label {
+  font-size: 0.875rem;
+  color: #64748b;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+}
+
+.suggestions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.suggestion-button {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: #475569;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.suggestion-button:hover {
+  background: #e2e8f0;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.suggestion-button:active {
+  transform: translateY(0);
+}
+
+/* Interactive Responses */
+.interactive-response {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.runbook-suggestions-chat h4 {
+  margin: 0 0 0.75rem 0;
+  font-size: 1rem;
+  color: #1e293b;
+}
+
+.runbook-suggestion-item {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.runbook-suggestion-item strong {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+.runbook-suggestion-item p {
+  margin: 0.5rem 0 0 0;
+  font-size: 0.875rem;
+  color: #64748b;
+}
+
+/* Chat Input */
+.runbook-chat-assistant .chat-input-container {
+  padding: 0.75rem;
+  border-top: 1px solid #e5e7eb;
+  background: #ffffff;
+}
+
+.runbook-chat-assistant .chat-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-end;
+}
+
+.runbook-chat-assistant .message-input {
+  flex: 1;
+  min-height: 40px;
+  max-height: 120px;
+  padding: 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  resize: none;
+  font-size: 0.875rem;
+  font-family: inherit;
+  background: #ffffff;
+  transition: border-color 0.2s;
+}
+
+.runbook-chat-assistant .message-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.runbook-chat-assistant .send-button {
+  padding: 0.75rem 1rem;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.runbook-chat-assistant .send-button:hover:not(:disabled) {
+  background: #2563eb;
+}
+
+.runbook-chat-assistant .send-button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.typing-indicator span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #64748b;
+  animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typing {
+  0%, 80%, 100% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .runbooks-page-container,
+  .runbook-detail-page-container {
+    flex-direction: column;
+  }
+  
+  .runbooks-chat-container,
+  .runbook-detail-chat-container {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 400px;
+    border-left: none;
+    border-top: 1px solid #e5e7eb;
+  }
+  
+  .runbooks-main-content,
+  .runbook-detail-main {
+    padding: 0.75rem;
+  }
+  
+  /* Mobile stacked layout */
+  .runbooks-page-container,
+  .runbook-detail-page-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .runbooks-chat-container,
+  .runbook-detail-chat-container {
+    height: 350px;
+  }
+  
+  .runbook-chat-assistant .chat-input {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .runbook-chat-assistant .send-button {
+    align-self: flex-end;
+    width: auto;
+  }
+}
